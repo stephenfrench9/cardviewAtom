@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         //2. It will be a list
         mRecyclerView = (RecyclerView) findViewById(R.id.rv);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        mRecyclerView.setLayoutManager(new GridAutofitLayoutManager(this, 300));
 
         //3. initialize the data
         data = new ArrayList<String>(Arrays.asList("one", "two", "three"));
