@@ -2,9 +2,13 @@ package com.example.stephenfrench.cardviewatom;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         //2. It will be a list
         mRecyclerView = (RecyclerView) findViewById(R.id.rv);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
         //3. initialize the data
         data = new ArrayList<String>(Arrays.asList("one", "two", "three"));
-        String[] data1 = new String[]{"a", "b", "c"};
+        String[] data1 = new String[]{"a", "b", "c", "d", "e", "f", "g"};
 
         //4. put the data into the list
         Log.d("earth", "commision adapter");
@@ -44,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
         //3) say how many of these views to make // this is done automatically - but how?
         //4) put the data into the views
         //5) the recycler view and layout manager will arrange the views/display them as needed
+
+    }
+
+    public void clickedCard(View view) {
+        Toast.makeText(this, "sandra", Toast.LENGTH_LONG).show();
+        TextView tv = view.findViewById(R.id.tv1);
+        tv.setText("that day");
 
     }
 }
