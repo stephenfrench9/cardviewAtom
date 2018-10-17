@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
-    private List<Integer> data;
+    private List<String> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +29,13 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //3. initialize the data
-        data = new ArrayList<Integer>(Arrays.asList(1,2,3,4,38,5));
+        data = new ArrayList<String>(Arrays.asList("one", "two", "three"));
+        String[] data1 = new String[]{"a", "b", "c"};
 
         //4. put the data into the list
-        mAdapter = new adapterR(data);
+        Log.d("earth", "commision adapter");
+        mAdapter = new adapterR(data1);
+//        mAdapter = new MyAdapter(data1);
         mRecyclerView.setAdapter(mAdapter);
 
         //the adapter must:
